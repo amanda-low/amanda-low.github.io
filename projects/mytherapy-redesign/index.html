@@ -28,9 +28,9 @@
       <a href="#problem">Problem</a>
       <a href="#research">Research</a>
       <a href="#principles">Principles</a>
-      <a href="#design">Visual design</a>
       <a href="#solution">Solution</a>
       <a href="#prototype">Prototype</a>
+      <a href="#design">Visual design</a>
       <a href="#ai">AI</a>
       <a href="#validation">Validation</a>
     </nav>
@@ -73,7 +73,7 @@
       </div>
       <div class="about__body">
         <p class="about__eyebrow">Hello, I'm Amanda</p>
-        <p class="about__line">I spent nine years in e-commerce digital marketing across subscription, DTC, own brands, healthtech, fashion, and beauty before transitioning into UX. Since 2021 I've been a product designer at HelloFresh, where I work on retention in the shopping experience across 8 brands. I care about behaviour change, accessibility, and shipping things that hold up well after the launch announcement.</p>
+        <p class="about__line">I have five years of experience in UX and product design, plus eight years in e-commerce digital marketing. Since 2021 I've been a product designer at HelloFresh, working on retention in the shopping experience. I take design end to end, I've folded AI workflows into every step of the process, and I design mobile first. At HelloFresh I've worked across eight brands, including Factor, which sells dietitian-built meal plans tied to health goals like high protein or GLP-1 support.</p>
         <p class="about__line about__line--quiet">Based in Berlin. Working in English and German.</p>
       </div>
     </div>
@@ -86,21 +86,7 @@
       <h2 class="section__title">Hypertension is a silent condition.</h2>
       <p class="section__lede">Most people with high blood pressure don't feel sick. The medication doesn't make them feel better, side effects can make them feel worse, and unlike painkillers the meds don't pay off in real time. Motivation has to come from somewhere else.</p>
 
-      <h3 class="painlist__group-title">Where MyTherapy falls short</h3>
-      <div class="painlist">
-        <div class="painlist__row">
-          <p><strong>The outcome is invisible.</strong> The app counts pills. It doesn't count the BP numbers a patient and their GP actually care about.</p>
-        </div>
-        <div class="painlist__row">
-          <p><strong>The GP loop is missing.</strong> No goal, no follow-up date, no shareable summary. The reason most people install the app in the first place.</p>
-        </div>
-        <div class="painlist__row">
-          <p><strong>The streak is brittle.</strong> One missed dose breaks it. Literature on chronic-disease adherence is clear: streak loss produces shame, not better behaviour.</p>
-        </div>
-        <div class="painlist__row">
-          <p><strong>Trust leaks.</strong> RedPoints, sponsored content, pharmacy commerce on the Support tab. Each is defensible alone. Stacked, they undermine the medical credibility this user came for.</p>
-        </div>
-      </div>
+      <p class="section__lede">MyTherapy is built like a task tracker. Hypertension management is a condition-control loop: take the pill, measure the outcome, see the trend, adjust with a GP. The app gets the first dose. It doesn't earn the next 90 days.</p>
 
     </div>
   </section>
@@ -135,24 +121,16 @@
         </article>
       </div>
 
-      <h3 class="subsection__title">Three findings</h3>
-      <div class="findings">
-        <article class="finding">
-          <h4>The screen after the first medication is the highest-leverage in the app.</h4>
-          <p>Margaret picks Hypertension as the indication. The app drops her on a generic "1 of 4 categories" hub. The obvious next move (track BP) is buried as one of four equal tiles. This single screen change drives most of the redesign.</p>
-        </article>
-        <article class="finding">
-          <h4>Streaks and points are clinically risky for chronic conditions.</h4>
-          <p>An all-or-nothing streak silently incentivises double-dosing or delayed dosing. Both are explicit don'ts for Lisinopril.</p>
-        </article>
-        <article class="finding">
-          <h4>The outcome the user cares about is invisible.</h4>
-          <p>Margaret installed the app to manage her BP. The app counts pills. There's no BP card on Today, no trend chart on Progress, and no way to share with her GP. Day 30 has nothing to come back for.</p>
-        </article>
-      </div>
+      <h3 class="subsection__title">Risk areas</h3>
+      <p class="subsection__lede">Three high-stakes moments in onboarding, each one underperforming. Detail in the comparative analysis below.</p>
+      <ul class="card__list card__list--scope">
+        <li><strong>First impression doesn't earn the install.</strong></li>
+        <li><strong>The screen after the first medication is the highest-leverage moment, and it's wasted.</strong></li>
+        <li><strong>The daily reminder loop misreads the user.</strong></li>
+      </ul>
 
       <h3 class="subsection__title">Comparative analysis</h3>
-      <p class="subsection__lede">I looked at MyTherapy alongside Apple Health, Medisafe, and Bloom at three high-stakes moments in onboarding: the first impression, the screen after the first medication, and the daily reminder loop.</p>
+      <p class="subsection__lede">I looked at MyTherapy alongside Apple Health, Medisafe, and Bloom at the three risk areas during onboarding.</p>
 
       <h4 class="compare__title">First impression</h4>
       <p class="compare__lede">The first thing a newly diagnosed user sees. This is where reassurance has to do its work.</p>
@@ -350,172 +328,50 @@
       <p class="section__lede">A medical reminder for a chronic condition has three jobs: get the dose taken today, build the daily habit, and keep the reason for taking the tablet alive in the user's head. Three of these principles answer those jobs. Two are product calls that make the rest possible.</p>
 
       <h3 class="subsection__title">Three behaviour-change bets</h3>
-      <p class="subsection__lede">Three established design-for-behaviour-change principles, picked because they map directly to areas where the original MyTherapy underperforms.</p>
+      <p class="subsection__lede">Established principles picked for where MyTherapy underperforms.</p>
 
       <div class="principles principles--3">
         <article class="principle">
           <p class="principle__num">01</p>
           <h3 class="principle__title">Show clear goals and progress.</h3>
-          <ul class="principle__list">
-            <li>Concrete BP target (under 130 systolic), threaded through every surface.</li>
-            <li>Weekly dot strip, four-week trend chart, and Day-14 milestone screen all show movement against the goal.</li>
-          </ul>
-          <p class="principle__cite"><strong>Where MyTherapy falls short:</strong> counts pills, not BP. No target, no trend, no answer to "is this working?" Sources: Michie et al., <em>The Behaviour Change Wheel</em> (COM-B); Locke and Latham on goal salience.</p>
+          <p class="principle__body">A concrete BP target threaded through every surface, so the user always has an answer to "is this working?"</p>
         </article>
         <article class="principle">
           <p class="principle__num">02</p>
           <h3 class="principle__title">Write humane, motivating copy.</h3>
-          <ul class="principle__list">
-            <li>Avoid shaming. Normalise lapses.</li>
-            <li>Recoverable language: a hollow dot says "you missed Tuesday." A streak loss says "you failed."</li>
-          </ul>
-          <p class="principle__cite"><strong>Where MyTherapy falls short:</strong> streak counters and loss-framed prompts punish the bad week, when the user most needs to come back. Sources: Wohl et al. on the "what-the-hell effect"; Haynes et al., Cochrane review of adherence interventions.</p>
+          <p class="principle__body">Recoverable language. A hollow dot says "you missed Tuesday." A streak loss says "you failed."</p>
         </article>
         <article class="principle">
           <p class="principle__num">03</p>
           <h3 class="principle__title">Design around cues, not willpower.</h3>
-          <ul class="principle__list">
-            <li>Contextual reminders that thread the user's goal, not bare alarm clocks.</li>
-            <li>Day one: "The one that brings your numbers down."</li>
-            <li>Steady state: "Day 14. Down 6 points, closer to your target."</li>
-          </ul>
-          <p class="principle__cite"><strong>Where MyTherapy falls short:</strong> alarm-clock copy with no goal context. The prompt fades into background noise by week three. Sources: WHO, <em>Adherence to Long-Term Therapies</em> (2003); NICE NG76, <em>Medicines adherence</em>.</p>
+          <p class="principle__body">Reminders that thread the user's goal, not bare alarm clocks. "Day 14. Down 6 points, closer to your target."</p>
         </article>
       </div>
 
       <h3 class="subsection__title">Two product calls</h3>
-      <p class="subsection__lede">Not behaviour-change theory, but the structural decisions that let the three above land.</p>
+      <p class="subsection__lede">Structural decisions that let the three above land.</p>
 
       <div class="principles">
         <article class="principle">
           <p class="principle__num">04</p>
           <h3 class="principle__title">Personalise by indication.</h3>
-          <p class="principle__body">Once the user names their condition, the next step should be named too. Hypertension means BP tracking is the obvious next move, not one tile of four. Personalisation by indication is what makes "make the outcome visible" possible: you can't centre a trend the user never started logging.</p>
+          <p class="principle__body">Once the user names their condition, the next step should be named too. Hypertension means BP tracking is the obvious move, not one tile of four.</p>
         </article>
         <article class="principle">
           <p class="principle__num">05</p>
           <h3 class="principle__title">Keep clinical surfaces clean.</h3>
-          <p class="principle__body">Commerce is real, but it doesn't belong on Today, Progress, or Support. Move it to its own clearly named tab so users know which surface is selling and which is helping. Trust is the substrate every other principle is built on; a cluttered clinical surface erodes it faster than any single feature can rebuild it.</p>
+          <p class="principle__body">Commerce is real, but it doesn't belong on Today, Progress, or Support. Move it to its own tab so users know which surface is selling and which is helping.</p>
         </article>
       </div>
-    </div>
-  </section>
-
-  <!-- ============== DESIGN ============== -->
-  <section id="design" class="band">
-    <div class="band__inner">
-      <p class="section__eyebrow">04 · Visual design</p>
-      <h2 class="section__title">Visual design.</h2>
-      <p class="section__lede">The visual language the prototype is built on.</p>
-
-      <div class="grid grid--2">
-        <article class="card">
-          <div class="card__visual card__visual--style" aria-hidden="true">
-            <div class="viz-style">
-              <div class="viz-style__chip">
-                <span class="viz-style__swatch" style="background: #E26B5C;"></span>
-                <span class="viz-style__hex">#E26B5C</span>
-              </div>
-              <div class="viz-style__chip">
-                <span class="viz-style__swatch" style="background: #0F4C3A;"></span>
-                <span class="viz-style__hex">#0F4C3A</span>
-              </div>
-              <div class="viz-style__chip">
-                <span class="viz-style__swatch" style="background: #FBE7D6;"></span>
-                <span class="viz-style__hex">#FBE7D6</span>
-              </div>
-              <div class="viz-style__chip">
-                <span class="viz-style__swatch" style="background: #FBF7EE;"></span>
-                <span class="viz-style__hex">#FBF7EE</span>
-              </div>
-              <div class="viz-style__chip">
-                <span class="viz-style__swatch" style="background: #3A2417;"></span>
-                <span class="viz-style__hex">#3A2417</span>
-              </div>
-            </div>
-          </div>
-          <h3 class="card__title">Style</h3>
-          <p class="card__body">Every colour shifts one half-step warmer than the clinical default. The system stays trustworthy without feeling like a waiting room.</p>
-          <ul class="card__list">
-            <li><strong>Coral accent</strong>, not red. Same warmth, none of the medical-alert reading.</li>
-            <li><strong>Teal-green CTAs</strong> (<code>#0F4C3A</code>). Closer to a pharmacy or GP portal than a wellness app.</li>
-            <li><strong>Peach background</strong>, inherited from MyTherapy. Low-stimulation surface for an anxious user.</li>
-            <li><strong>Cream cards</strong>, not pure white. Softer for older eyes, no glare around text.</li>
-            <li><strong>Warm brown ink</strong>, not black. Passes AA contrast, reads softer on a warm ground.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <div class="card__visual card__visual--illustration" aria-hidden="true">
-            <svg class="viz-illust" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-              <defs>
-                <linearGradient id="vizIllustGrad" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0" stop-color="#FFD9C7"/>
-                  <stop offset="1" stop-color="#FFE9DC"/>
-                </linearGradient>
-                <clipPath id="vizIllustClip"><rect x="0" y="0" width="240" height="200"/></clipPath>
-              </defs>
-              <g clip-path="url(#vizIllustClip)">
-                <rect x="0" y="0" width="240" height="200" fill="url(#vizIllustGrad)"/>
-                <circle cx="44" cy="46" r="14" fill="#FBF7EE"/>
-                <circle cx="44" cy="46" r="9" fill="#E26B5C" opacity=".22"/>
-                <path d="M22 168 q 100 -8 200 0" stroke="#3A2417" stroke-width="1" fill="none" stroke-linecap="round" opacity=".22"/>
-                <ellipse cx="120" cy="178" rx="36" ry="4" fill="#3A2417" opacity=".08"/>
-                <circle cx="120" cy="62" r="15" fill="#F0CDB0"/>
-                <path d="M106 58 q 0 -14 14 -16 q 16 -2 20 10 q 1 6 -1 10 q -6 -4 -12 -4 q -10 0 -14 4 q -4 -2 -7 -4 z" fill="#C8BBB0"/>
-                <g fill="none" stroke="#3A2417" stroke-width="1.4">
-                  <circle cx="114" cy="62" r="4"/>
-                  <circle cx="126" cy="62" r="4"/>
-                  <line x1="118" y1="62" x2="122" y2="62" stroke-linecap="round"/>
-                </g>
-                <path d="M116 70 q 4 3 8 0" stroke="#3A2417" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-                <path d="M114 76 v 6 h 12 v -6" fill="#F0CDB0"/>
-                <path d="M104 84 q 16 -4 32 0 l 4 50 q -20 6 -40 0 z" fill="#E26B5C"/>
-                <path d="M110 104 q 10 4 20 0" stroke="#3A2417" stroke-width="1" fill="none" stroke-linecap="round" opacity=".35"/>
-                <path d="M104 88 q -6 14 -4 30 q 5 2 8 0 q 2 -16 0 -28 z" fill="#F0CDB0"/>
-                <path d="M136 88 q 8 14 6 30 q -5 2 -8 0 q -2 -16 0 -28 z" fill="#F0CDB0"/>
-                <g transform="translate(146 122)">
-                  <rect x="-6" y="-4" width="12" height="4" rx="1" fill="#3A2417"/>
-                  <rect x="-7" y="0" width="14" height="18" rx="1.5" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
-                  <rect x="-7" y="6" width="14" height="6" fill="#E26B5C"/>
-                  <line x1="0" y1="7.5" x2="0" y2="10.5" stroke="#FBF7EE" stroke-width="1.2" stroke-linecap="round"/>
-                  <line x1="-1.5" y1="9" x2="1.5" y2="9" stroke="#FBF7EE" stroke-width="1.2" stroke-linecap="round"/>
-                </g>
-                <path d="M110 132 l -2 38 l 10 0 l 4 -32 z" fill="#3A2417"/>
-                <path d="M124 138 l 4 32 l 10 0 l -2 -36 z" fill="#3A2417"/>
-                <ellipse cx="112" cy="172" rx="8" ry="3.2" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
-                <ellipse cx="132" cy="172" rx="8" ry="3.2" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
-                <g stroke="#3A2417" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".5">
-                  <path d="M70 138 q 8 0 16 0"/>
-                  <path d="M64 148 q 10 0 18 0"/>
-                </g>
-                <g transform="translate(196 86) rotate(28)">
-                  <rect x="-9" y="-4" width="18" height="8" rx="4" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
-                  <path d="M -9 -4 h 9 v 8 h -9 a 4 4 0 0 1 0 -8 z" fill="#E26B5C"/>
-                  <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#3A2417" stroke-width="1"/>
-                </g>
-                <path d="M186 162 q 6 -10 -8 -14 q -2 9 8 14 z" fill="#E8C4A8" opacity=".75"/>
-              </g>
-            </svg>
-          </div>
-          <h3 class="card__title">Illustration</h3>
-          <p class="card__body">Hand-drawn, editorial, calm. Carries the warm palette through to every scene so the system stays in one tonal family.</p>
-          <ul class="card__list">
-            <li><strong>No hexagonal containers.</strong> They read as ID badges. Soft peach cards with cream halos instead.</li>
-            <li><strong>No sparkles or bright yellow.</strong> Both raise stimulation, the wrong cue for an anxious newly-diagnosed user.</li>
-            <li><strong>People Margaret can see herself in.</strong> Silver hair, glasses, a coral top, holding her medication. Calm, not abstract.</li>
-          </ul>
-        </article>
-      </div>
-
     </div>
   </section>
 
   <!-- ============== SOLUTION + PROTOTYPE ============== -->
-  <section id="solution" class="band band--cream">
+  <section id="solution" class="band">
     <div class="band__inner">
-      <p class="section__eyebrow">05 · Solution</p>
+      <p class="section__eyebrow">04 · Solution</p>
       <h2 class="section__title">The redesigned new-user experience.</h2>
-      <p class="section__lede">Three high-stakes moments rebuilt: a welcome that names the outcome, a screen after the first medication that names the next step, and a daily loop that swaps the streak for a recoverable dot strip and a BP trend. Eight screens replaced or added, three deferred to later in the journey, and a clickable prototype that runs the whole flow.</p>
+      <p class="section__lede">Three high-stakes moments rebuilt: a welcome that names the outcome, a screen after the first medication that names the next step, and a daily loop that swaps the streak for a weekly adherence score and a BP trend. Eight screens replaced or added, three deferred to later in the journey, and a clickable prototype that runs the whole flow.</p>
 
       <!-- ============== MOMENT 01 ============== -->
       <h4 class="moment-heading"><span class="moment-heading__num">Moment 01</span> First impression</h4>
@@ -535,7 +391,7 @@
               <img src="images/welcome/mytherapy-2.png" alt="Original MyTherapy welcome carousel frame 2: 'Plan your appointments' with a phone-and-card illustration and 'And much more...' caption." />
               <img src="images/welcome/mytherapy-3.png" alt="Original MyTherapy welcome carousel frame 3: 'Get medication reminders' with a phone-and-bell illustration and 'And much more...' caption." />
             </div>
-            <p class="changeset__caption changeset__caption--pain"><strong>Pain point</strong>No felt benefit.</p>
+            <div class="changeset__caption changeset__caption--pain"><strong>Pain points</strong><ul class="changeset__caption-list"><li>Hard to stay motivated</li><li>No felt benefit</li></ul></div>
           </div>
           <div class="changeset__cell changeset__cell--after">
             <span class="changeset__cell-label">Redesign</span>
@@ -570,7 +426,7 @@
           <div class="changeset__cell changeset__cell--before">
             <span class="changeset__cell-label">Original</span>
             <img src="images/handoff/mytherapy-1.png" alt="Original MyTherapy handoff screen, showing four generic category tiles after the first medication is added." />
-            <p class="changeset__caption changeset__caption--pain"><strong>Pain point</strong>No felt benefit.</p>
+            <div class="changeset__caption changeset__caption--pain"><strong>Pain points</strong><ul class="changeset__caption-list"><li>Hard to stay motivated</li><li>No felt benefit</li></ul></div>
           </div>
           <div class="changeset__cell changeset__cell--after">
             <span class="changeset__cell-label">Redesign</span>
@@ -666,7 +522,7 @@
           </div>
           <div class="changeset__cell">
             <div class="changeset__empty">No equivalent in the original.</div>
-            <p class="changeset__caption changeset__caption--pain"><strong>Pain point</strong>No felt benefit.</p>
+            <div class="changeset__caption changeset__caption--pain"><strong>Pain points</strong><ul class="changeset__caption-list"><li>Hard to stay motivated</li><li>No felt benefit</li></ul></div>
           </div>
           <div class="changeset__cell changeset__cell--after">
             <span class="changeset__cell-label">New screen</span>
@@ -682,7 +538,7 @@
           </div>
           <div class="changeset__cell">
             <div class="changeset__empty">No equivalent in the original.</div>
-            <p class="changeset__caption changeset__caption--pain"><strong>Pain points</strong>No felt benefit. Regular doctor check-ins.</p>
+            <div class="changeset__caption changeset__caption--pain"><strong>Pain points</strong><ul class="changeset__caption-list"><li>No felt benefit</li><li>Regular doctor check-ins</li></ul></div>
           </div>
           <div class="changeset__cell changeset__cell--after">
             <span class="changeset__cell-label">New screen</span>
@@ -694,24 +550,24 @@
 
       <!-- ============== MOMENT 03 ============== -->
       <h4 class="moment-heading"><span class="moment-heading__num">Moment 03</span> The daily reminder loop</h4>
-      <p class="moment-subheading">The bare alarm becomes a goal-threaded reminder. Progress shifts from a brittle streak to a recoverable dot strip, and the after-tap landing replaces the points celebration with a clinical trend.</p>
+      <p class="moment-subheading">The bare alarm becomes a goal-threaded reminder. Progress shifts from a brittle streak to a weekly adherence score that averages across seven days, and the after-tap landing replaces the points celebration with a clinical trend.</p>
 
       <div class="changeset">
         <div class="changeset__row">
           <div class="changeset__label">
             <p class="changeset__moment">Changed</p>
             <p class="changeset__title">Daily reminder</p>
-            <p class="changeset__note">A red CRITICAL alarm becomes a calm, goal-threaded prompt. Today swaps the streak flame and "1 completed task" celebration for a dot strip and the BP card.</p>
+            <p class="changeset__note">A red CRITICAL alarm becomes a calm, goal-threaded prompt. Today swaps the streak flame and "1 completed task" celebration for a weekly adherence score and the BP card.</p>
           </div>
           <div class="changeset__cell changeset__cell--before">
             <span class="changeset__cell-label">Original</span>
-            <img src="images/notifications/mytherapy-1.png" alt="Original MyTherapy daily reminder, a plain medication alert with no goal context." />
-            <p class="changeset__caption changeset__caption--pain"><strong>Pain points</strong>No felt reward. Life stress and fatigue.</p>
+            <img src="images/notifications/mytherapy-today-original.png" alt="Original MyTherapy Today screen with a 'Resolve all tasks below for a streak' progress bar, a 0 day streak, an 08:30 Lisinopril 10 mg Tabletten task, and a One-time entry button. A red RedPoints chip with a count of 0 sits at the top." />
+            <div class="changeset__caption changeset__caption--pain"><strong>Pain points</strong><ul class="changeset__caption-list"><li>Hard to stay motivated</li><li>Life stress and fatigue</li><li>Side effect discomfort</li></ul></div>
           </div>
           <div class="changeset__cell changeset__cell--after">
             <span class="changeset__cell-label">Redesign</span>
             <img src="images/hero/03-today.png" alt="Redesigned Today screen and reminder, threading the user's stated goal through the daily prompt." />
-            <p class="changeset__caption changeset__caption--solution"><strong>Solution</strong>A recoverable dot strip survives the missed dose.</p>
+            <p class="changeset__caption changeset__caption--solution"><strong>Solution</strong>A weekly adherence score, averaged across seven days, survives the missed dose.</p>
           </div>
         </div>
       </div>
@@ -722,7 +578,7 @@
           <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Tone.</strong> Plain language, no CRITICAL flag, no alarm clock. Reads like a friendly nudge, not an emergency.</li>
           <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Action friction.</strong> Mark taken from the lock screen at steady state. No app open required.</li>
           <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Specificity.</strong> Drug, dose, time, plus the goal context the original was missing.</li>
-          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>After-tap landing.</strong> A recoverable dot strip and the BP card. No streak flame, no celebration, no "completed task" headline.</li>
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>After-tap landing.</strong> A weekly adherence score and the BP card. No streak flame, no celebration, no "completed task" headline.</li>
         </ul>
         <p class="rescore__delta">Was mixed (1/3 tone, 2/3 friction, 3/3 specificity, 1/3 after-tap). Now 3/3 across all four.</p>
       </div>
@@ -739,7 +595,7 @@
           <div class="changeset__cell changeset__cell--before">
             <span class="changeset__cell-label">Original</span>
             <img src="images/changes/orig-progress-tab.png" alt="Original MyTherapy Progress tab showing a My RedPoints zero-point summary with a 'Transfer points and save!' badge, a daily steps bar chart, a 'Connect with Apple Health' button, and a Personalize link." />
-            <p class="changeset__caption changeset__caption--pain"><strong>Pain points</strong>No felt benefit. Regular doctor check-ins.</p>
+            <div class="changeset__caption changeset__caption--pain"><strong>Pain points</strong><ul class="changeset__caption-list"><li>No felt benefit</li><li>Regular doctor check-ins</li></ul></div>
           </div>
           <div class="changeset__cell changeset__cell--after">
             <span class="changeset__cell-label">Replaced by Insights</span>
@@ -755,7 +611,7 @@
           </div>
           <div class="changeset__cell">
             <div class="changeset__empty">No equivalent in the original.</div>
-            <p class="changeset__caption changeset__caption--pain"><strong>Pain point</strong>Life stress and fatigue.</p>
+            <div class="changeset__caption changeset__caption--pain"><strong>Pain points</strong><ul class="changeset__caption-list"><li>Life stress and fatigue</li><li>Hard to stay motivated</li></ul></div>
           </div>
           <div class="changeset__cell changeset__cell--after">
             <span class="changeset__cell-label">New screens</span>
@@ -774,7 +630,7 @@
           </div>
           <div class="changeset__cell">
             <div class="changeset__empty">No equivalent in the original.</div>
-            <p class="changeset__caption changeset__caption--pain"><strong>Pain points</strong>No felt reward. Regular doctor check-ins.</p>
+            <div class="changeset__caption changeset__caption--pain"><strong>Pain points</strong><ul class="changeset__caption-list"><li>No felt benefit</li><li>Regular doctor check-ins</li></ul></div>
           </div>
           <div class="changeset__cell changeset__cell--after">
             <span class="changeset__cell-label">New screen</span>
@@ -786,18 +642,34 @@
 
       <h3 class="subsection__title">Out of scope</h3>
       <p class="subsection__lede">Skipped for time, not because they don't matter.</p>
-      <div class="grid grid--3">
+      <div class="grid grid--4">
         <article class="card">
           <h3 class="card__title">Accessibility audit</h3>
-          <p class="card__body">Original meets minimum, so I treated parity as a baseline. WCAG 2.2 AA, VoiceOver on BP inputs, and dynamic type are Sprint 1 adds.</p>
+          <ul class="card__list">
+            <li>Original meets minimum, treated parity as baseline.</li>
+            <li>WCAG 2.2 AA, VoiceOver on BP inputs, dynamic type as Sprint 1 adds.</li>
+          </ul>
         </article>
         <article class="card">
           <h3 class="card__title">DiGA regulatory fit</h3>
-          <p class="card__body">Germany's DiGA framework reshapes the GP loop, BP export, and consent. A precondition for shipping, out of scope for a home assignment.</p>
+          <ul class="card__list">
+            <li>Reshapes the GP loop, BP export, and consent.</li>
+            <li>A precondition for shipping, not for a home assignment.</li>
+          </ul>
         </article>
         <article class="card">
           <h3 class="card__title">Interaction design</h3>
-          <p class="card__body">Motion specs, micro-interactions, and the haptic shape of "Mark taken." The prototype hints at the rhythm without defining it.</p>
+          <ul class="card__list">
+            <li>Motion specs and micro-interactions.</li>
+            <li>The haptic shape of "Mark taken."</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 class="card__title">Missed doses and side effects</h3>
+          <ul class="card__list">
+            <li>Drug-specific recovery sheet (don't double up on Lisinopril).</li>
+            <li>Side-effect logging that feeds Insights and the GP export.</li>
+          </ul>
         </article>
       </div>
 
@@ -805,9 +677,9 @@
   </section>
 
   <!-- ============== PROTOTYPE ============== -->
-  <section id="prototype" class="band">
+  <section id="prototype" class="band band--cream">
     <div class="band__inner">
-      <p class="section__eyebrow">06 · Prototype</p>
+      <p class="section__eyebrow">05 · Prototype</p>
       <h2 class="section__title">Live prototype.</h2>
       <p class="section__lede">A clickable walkthrough of the redesigned onboarding and the steady-state loop.</p>
 
@@ -877,12 +749,121 @@
     </div>
   </section>
 
+  <!-- ============== DESIGN ============== -->
+  <section id="design" class="band">
+    <div class="band__inner">
+      <p class="section__eyebrow">06 · Visual design</p>
+      <h2 class="section__title">Visual design.</h2>
+      <p class="section__lede">The visual language the prototype is built on.</p>
+
+      <div class="grid grid--2">
+        <article class="card">
+          <div class="card__visual card__visual--style" aria-hidden="true">
+            <div class="viz-style">
+              <div class="viz-style__chip">
+                <span class="viz-style__swatch" style="background: #E26B5C;"></span>
+                <span class="viz-style__hex">#E26B5C</span>
+              </div>
+              <div class="viz-style__chip">
+                <span class="viz-style__swatch" style="background: #0F4C3A;"></span>
+                <span class="viz-style__hex">#0F4C3A</span>
+              </div>
+              <div class="viz-style__chip">
+                <span class="viz-style__swatch" style="background: #FBE7D6;"></span>
+                <span class="viz-style__hex">#FBE7D6</span>
+              </div>
+              <div class="viz-style__chip">
+                <span class="viz-style__swatch" style="background: #FBF7EE;"></span>
+                <span class="viz-style__hex">#FBF7EE</span>
+              </div>
+              <div class="viz-style__chip">
+                <span class="viz-style__swatch" style="background: #3A2417;"></span>
+                <span class="viz-style__hex">#3A2417</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="card__title">Style</h3>
+          <p class="card__body">Every colour shifts one half-step warmer than the clinical default. Trustworthy, not a waiting room.</p>
+          <ul class="card__list">
+            <li><strong>Coral accent,</strong> not red.</li>
+            <li><strong>Teal-green CTAs.</strong> Pharmacy, not wellness app.</li>
+            <li><strong>Peach background.</strong> Low-stimulation.</li>
+            <li><strong>Cream cards,</strong> not white. Softer for older eyes.</li>
+            <li><strong>Warm brown ink,</strong> not black. Passes AA.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card__visual card__visual--illustration" aria-hidden="true">
+            <svg class="viz-illust" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="vizIllustGrad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#FFD9C7"/>
+                  <stop offset="1" stop-color="#FFE9DC"/>
+                </linearGradient>
+                <clipPath id="vizIllustClip"><rect x="0" y="0" width="240" height="200"/></clipPath>
+              </defs>
+              <g clip-path="url(#vizIllustClip)">
+                <rect x="0" y="0" width="240" height="200" fill="url(#vizIllustGrad)"/>
+                <circle cx="44" cy="46" r="14" fill="#FBF7EE"/>
+                <circle cx="44" cy="46" r="9" fill="#E26B5C" opacity=".22"/>
+                <path d="M22 168 q 100 -8 200 0" stroke="#3A2417" stroke-width="1" fill="none" stroke-linecap="round" opacity=".22"/>
+                <ellipse cx="120" cy="178" rx="36" ry="4" fill="#3A2417" opacity=".08"/>
+                <circle cx="120" cy="62" r="15" fill="#F0CDB0"/>
+                <path d="M106 58 q 0 -14 14 -16 q 16 -2 20 10 q 1 6 -1 10 q -6 -4 -12 -4 q -10 0 -14 4 q -4 -2 -7 -4 z" fill="#C8BBB0"/>
+                <g fill="none" stroke="#3A2417" stroke-width="1.4">
+                  <circle cx="114" cy="62" r="4"/>
+                  <circle cx="126" cy="62" r="4"/>
+                  <line x1="118" y1="62" x2="122" y2="62" stroke-linecap="round"/>
+                </g>
+                <path d="M116 70 q 4 3 8 0" stroke="#3A2417" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+                <path d="M114 76 v 6 h 12 v -6" fill="#F0CDB0"/>
+                <path d="M104 84 q 16 -4 32 0 l 4 50 q -20 6 -40 0 z" fill="#E26B5C"/>
+                <path d="M110 104 q 10 4 20 0" stroke="#3A2417" stroke-width="1" fill="none" stroke-linecap="round" opacity=".35"/>
+                <path d="M104 88 q -6 14 -4 30 q 5 2 8 0 q 2 -16 0 -28 z" fill="#F0CDB0"/>
+                <path d="M136 88 q 8 14 6 30 q -5 2 -8 0 q -2 -16 0 -28 z" fill="#F0CDB0"/>
+                <g transform="translate(146 122)">
+                  <rect x="-6" y="-4" width="12" height="4" rx="1" fill="#3A2417"/>
+                  <rect x="-7" y="0" width="14" height="18" rx="1.5" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
+                  <rect x="-7" y="6" width="14" height="6" fill="#E26B5C"/>
+                  <line x1="0" y1="7.5" x2="0" y2="10.5" stroke="#FBF7EE" stroke-width="1.2" stroke-linecap="round"/>
+                  <line x1="-1.5" y1="9" x2="1.5" y2="9" stroke="#FBF7EE" stroke-width="1.2" stroke-linecap="round"/>
+                </g>
+                <path d="M110 132 l -2 38 l 10 0 l 4 -32 z" fill="#3A2417"/>
+                <path d="M124 138 l 4 32 l 10 0 l -2 -36 z" fill="#3A2417"/>
+                <ellipse cx="112" cy="172" rx="8" ry="3.2" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
+                <ellipse cx="132" cy="172" rx="8" ry="3.2" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
+                <g stroke="#3A2417" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".5">
+                  <path d="M70 138 q 8 0 16 0"/>
+                  <path d="M64 148 q 10 0 18 0"/>
+                </g>
+                <g transform="translate(196 86) rotate(28)">
+                  <rect x="-9" y="-4" width="18" height="8" rx="4" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
+                  <path d="M -9 -4 h 9 v 8 h -9 a 4 4 0 0 1 0 -8 z" fill="#E26B5C"/>
+                  <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#3A2417" stroke-width="1"/>
+                </g>
+                <path d="M186 162 q 6 -10 -8 -14 q -2 9 8 14 z" fill="#E8C4A8" opacity=".75"/>
+              </g>
+            </svg>
+          </div>
+          <h3 class="card__title">Illustration</h3>
+          <p class="card__body">Hand-drawn, editorial, calm. One tonal family across every scene.</p>
+          <ul class="card__list">
+            <li><strong>No hexagonal containers.</strong> They read as ID badges.</li>
+            <li><strong>No sparkles or bright yellow.</strong> Too stimulating.</li>
+            <li><strong>People Margaret can see herself in.</strong> Calm, not abstract.</li>
+          </ul>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ============== AI ============== -->
   <section id="ai" class="band band--cream">
     <div class="band__inner">
       <p class="section__eyebrow">07 · AI</p>
       <h2 class="section__title">Targeted AI, not a chatbot.</h2>
-      <p class="section__lede">In adherence apps "AI" can mean anything from real ML to rule-based reminders. Medisafe and Bearable are the two with genuine models. MyTherapy today has neither. Four places I'd ship real AI.</p>
+      <p class="section__lede">In adherence apps "AI" can mean anything from real ML to rule-based reminders.</p>
 
       <div class="ai-grid">
         <article class="ai-card">
@@ -906,18 +887,8 @@
             <li><strong>In MyTherapy:</strong> for Lisinopril, "Don't double up today. Take today's dose at 08:30 as usual." For the 10 to 15% who get a dry cough, name the chance and route to the GP.</li>
           </ul>
         </article>
-        <article class="ai-card">
-          <h3>Pre-appointment summary</h3>
-          <ul>
-            <li><strong>my a:care:</strong> reflects patterns to clinicians, but doesn't auto-prepare them.</li>
-            <li><strong>In MyTherapy:</strong> three days before her GP visit, a one-page PDF. Weekly BP averages, readings outside target, adherence, side-effect notes, questions to ask.</li>
-          </ul>
-        </article>
       </div>
 
-      <div class="callout callout--quiet">
-        <p class="callout__quote callout__quote--small">What I would not use AI for: streaks, motivational pep talk, anthropomorphised "chat with your meds" (Finch's virtual-pet model works for self-care, not for chronic medication in an anxious 58-year-old), or drug interaction checks (those should be deterministic from a maintained database, not an LLM).</p>
-      </div>
     </div>
   </section>
 
@@ -929,7 +900,7 @@
       <p class="section__lede">What I'd take into the first week with a real team.</p>
 
       <h3 class="subsection__title">Hypotheses</h3>
-      <p class="subsection__lede">Two bets the redesign rests on. Each one has a target delta and a test that would prove or kill it.</p>
+      <p class="subsection__lede">Three bets the redesign rests on. Each one has a target delta and a test that would prove or kill it.</p>
 
       <div class="hypos">
         <article class="hypo">
@@ -937,7 +908,7 @@
           <div>
             <h4 class="hypo__title">Naming BP tracking as the next step lifts day-30 retention.</h4>
             <ul class="hypo__list">
-              <li><strong>Target:</strong> 10 to 15 point lift on day-30 retention for the hypertension cohort.</li>
+              <li><strong>Target:</strong> a meaningful increase in day-30 retention for the hypertension cohort. Single-screen change on the highest-leverage moment in onboarding, so the delta should be the largest of the three.</li>
               <li><strong>Test:</strong> A/B on the post-medication screen. Control, the four-tile hub. Variant, confirm + named next step (log BP).</li>
             </ul>
           </div>
@@ -945,10 +916,20 @@
         <article class="hypo">
           <p class="hypo__num">H2</p>
           <div>
-            <h4 class="hypo__title">A recoverable dot strip out-performs the streak on the bad week.</h4>
+            <h4 class="hypo__title">A weekly adherence score out-performs the streak on the bad week.</h4>
             <ul class="hypo__list">
               <li><strong>Why it matters:</strong> the streak's failure mode is the metric that counts. What happens after a miss.</li>
               <li><strong>Test:</strong> A/B on the Today home, segmented to users with at least one missed dose in week one. Primary metric, same-week return rate.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="hypo">
+          <p class="hypo__num">H3</p>
+          <div>
+            <h4 class="hypo__title">Threading the user's lifestyle goal through the daily loop lifts retention beyond just letting them set one.</h4>
+            <ul class="hypo__list">
+              <li><strong>Target:</strong> a measurable increase in day-30 retention. Smaller than H1, since the effect compounds over weeks.</li>
+              <li><strong>Test:</strong> A/B where both groups pick a goal. Control sees generic reminder and milestone copy. Variant sees the goal threaded back into both. Isolates the surfacing from the picking.</li>
             </ul>
           </div>
         </article>
@@ -967,11 +948,11 @@
         </article>
         <article class="card">
           <p class="card__eyebrow">Quantitative</p>
-          <h3 class="card__title">Leading and lagging metrics</h3>
+          <h3 class="card__title">Three metrics, in order of how soon they show up</h3>
           <ul class="card__list">
-            <li><strong>Leading: first BP reading logged in onboarding.</strong> The earliest signal that the reframe lands.</li>
-            <li><strong>Lagging: day-30 retention</strong> for hypertension users. The headline metric.</li>
-            <li><strong>Lagging: GP export rate.</strong> The clinical-value indicator. Small absolute volume, but the one a clinician would care about.</li>
+            <li><strong>First BP reading logged in onboarding.</strong> The earliest signal that the reframe lands.</li>
+            <li><strong>Day-30 retention</strong> for hypertension users. The headline metric.</li>
+            <li><strong>GP export rate.</strong> The clinical-value indicator. Small absolute volume, but the one a clinician would care about.</li>
           </ul>
         </article>
       </div>
@@ -981,7 +962,7 @@
         <div class="ship__col">
           <p class="ship__label">Sprint 1</p>
           <ul class="ship__list">
-            <li>Replace the streak with the weekly dot strip.</li>
+            <li>Replace the streak with the weekly adherence score.</li>
             <li>Ship the screen after the first medication.</li>
             <li>Surface BP logging on Today.</li>
             <li>A/B test H1 and H2.</li>
@@ -1006,12 +987,12 @@
       </div>
       <p class="ship__note">Sprints 1 and 2 are roughly 60% of the retention upside without any AI infrastructure.</p>
 
-      <h3 class="subsection__title">What I'd watch in the first month with a real team</h3>
-      <p class="subsection__lede">A home assignment ends here. The actual work begins when the first 100 hypertension users land on the new flow. Three things I'd be checking week one.</p>
+      <h3 class="subsection__title">What I'd do differently</h3>
+      <p class="subsection__lede">A home assignment is a structured argument from outside the team. Three things I'd change the moment I had real users, a clinician, and a backlog.</p>
       <ul class="card__list card__list--scope">
-        <li><strong>Are users finding "Log BP"?</strong> If not, the named next step needs to be louder, or the screen above it is doing too much.</li>
-        <li><strong>What does the bad week actually look like?</strong> The dot strip is the bet of the redesign. The first user who misses two doses tells you whether it works.</li>
-        <li><strong>Is the GP export getting opened?</strong> The clinical-value loop is the long-term retention story. If month-two users aren't reaching for it, the milestone screen is the lever to pull.</li>
+        <li><strong>Test the weekly adherence score earlier than anything else.</strong> It's the bet of the redesign, and the persona walkthrough can't tell me whether it lands. The first user who misses two doses is the one who decides.</li>
+        <li><strong>Pressure-test the goal-threading copy with a clinician.</strong> "Travel without worry" is a felt outcome. A GP would tell me which framings are safe, which over-promise, and which cross a regulatory line I can't see from the outside.</li>
+        <li><strong>Treat the persona walkthrough as scaffolding, not evidence.</strong> Margaret is a useful stand-in for shaping the argument. She's not a substitute for six newly diagnosed patients in a room. Some of what reads as a clear win on paper will look different on day three.</li>
       </ul>
     </div>
   </section>
