@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MyTherapy redesign. A case study by Amanda Low.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+
+<header class="topnav" role="banner">
+  <div class="topnav__inner">
+    <a class="topnav__brand" href="#top">
+      <span class="topnav__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22">
+          <g transform="translate(12 12) rotate(35)">
+            <rect x="-9" y="-4" width="18" height="8" rx="4" fill="#FFFFFF" stroke="#000000" stroke-width="1.4"/>
+            <path d="M -9 -4 h 9 v 8 h -9 a 4 4 0 0 1 0 -8 z" fill="#E26B5C"/>
+          </g>
+        </svg>
+      </span>
+      <span class="topnav__title">MyTherapy redesign</span>
+    </a>
+    <nav class="topnav__links" aria-label="Section">
+      <a href="#problem">Problem</a>
+      <a href="#research">Research</a>
+      <a href="#principles">Principles</a>
+      <a href="#design">Visual design</a>
+      <a href="#solution">Solution</a>
+      <a href="#prototype">Prototype</a>
+      <a href="#ai">AI</a>
+      <a href="#validation">Validation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============== HERO ============== -->
+  <section class="hero">
+    <h1 class="hero__title">Building daily habits and long-term trust for chronic care.</h1>
+    <p class="hero__sub">A redesign of MyTherapy's new-user experience for a newly diagnosed hypertension patient. Home assignment for Oviva's Senior Product Designer role.</p>
+
+    <ul class="hero__strip" aria-label="Four screens from the redesigned prototype: welcome, after the first medication, today, and insights.">
+      <li class="hero__shot">
+        <img src="images/hero/01-welcome.png" alt="Redesigned welcome screen showing 'Built with clinicians, used by 8 million people' over an illustration of an older woman walking, with an 8M+ users, 40 countries, 10+ conditions stat strip and a Get started button." />
+        <span class="hero__shot-caption">Welcome</span>
+      </li>
+      <li class="hero__shot">
+        <img src="images/hero/02-handoff.png" alt="Redesigned screen after the first medication confirming Lisinopril is set up with a first reminder at 08:30, a 'What you're doing this for' card titled 'Travel without worry', and a primary 'Set up BP tracking' button." />
+        <span class="hero__shot-caption">After the first medication</span>
+      </li>
+      <li class="hero__shot">
+        <img src="images/hero/03-today.png" alt="Redesigned Today home with a weekly dot strip showing six of seven days filled, today's Lisinopril 10 mg with a Mark taken button, and a Blood pressure card showing last reading 142 over 88, down 4 points in 2 weeks, with a Log reading button." />
+        <span class="hero__shot-caption">Today</span>
+      </li>
+      <li class="hero__shot">
+        <img src="images/hero/04-insights.png" alt="Redesigned Insights screen showing a four-week BP trend dropping toward a 130/80 target line, the summary 'Your average has dropped 9 points in 3 weeks', a 'What this is for' goal reminder, and an adherence calendar showing 23 of 25 days at 92 percent." />
+        <span class="hero__shot-caption">Insights</span>
+      </li>
+    </ul>
+
+  </section>
+
+  <!-- ============== ABOUT ME ============== -->
+  <section class="about" aria-label="About the designer">
+    <div class="about__inner">
+      <div class="about__photo">
+        <img src="images/amanda-portrait.png" alt="Amanda Low" />
+      </div>
+      <div class="about__body">
+        <p class="about__eyebrow">Hello, I'm Amanda</p>
+        <p class="about__line">I spent nine years in e-commerce digital marketing across subscription, DTC, own brands, healthtech, fashion, and beauty before transitioning into UX. Since 2021 I've been a product designer at HelloFresh, where I work on retention in the shopping experience across 8 brands. I care about behaviour change, accessibility, and shipping things that hold up well after the launch announcement.</p>
+        <p class="about__line about__line--quiet">Based in Berlin. Working in English and German.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PROBLEM ============== -->
+  <section id="problem" class="band band--cream">
+    <div class="band__inner">
+      <p class="section__eyebrow">01 · Problem</p>
+      <h2 class="section__title">Hypertension is a silent condition.</h2>
+      <p class="section__lede">Most people with high blood pressure don't feel sick. The medication doesn't make them feel better, side effects can make them feel worse, and unlike painkillers the meds don't pay off in real time. Motivation has to come from somewhere else.</p>
+
+      <h3 class="painlist__group-title">Where MyTherapy falls short</h3>
+      <div class="painlist">
+        <div class="painlist__row">
+          <p><strong>The outcome is invisible.</strong> The app counts pills. It doesn't count the BP numbers a patient and their GP actually care about.</p>
+        </div>
+        <div class="painlist__row">
+          <p><strong>The GP loop is missing.</strong> No goal, no follow-up date, no shareable summary. The reason most people install the app in the first place.</p>
+        </div>
+        <div class="painlist__row">
+          <p><strong>The streak is brittle.</strong> One missed dose breaks it. Literature on chronic-disease adherence is clear: streak loss produces shame, not better behaviour.</p>
+        </div>
+        <div class="painlist__row">
+          <p><strong>Trust leaks.</strong> RedPoints, sponsored content, pharmacy commerce on the Support tab. Each is defensible alone. Stacked, they undermine the medical credibility this user came for.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============== RESEARCH ============== -->
+  <section id="research" class="band">
+    <div class="band__inner">
+      <p class="section__eyebrow">02 · Research</p>
+      <h2 class="section__title">How I evaluated it.</h2>
+      <p class="section__lede">A persona walkthrough as Margaret across all 21 onboarding screens, a four-lens expert review, and a comparative analysis against three benchmark apps.</p>
+
+      <aside class="callout callout--persona">
+        <img class="callout__portrait" src="docs/personas/margaret.svg" alt="Illustration of Margaret, a 58-year-old woman with silver hair and glasses, sitting calmly with both hands cradling a cup of tea." />
+        <div>
+          <p class="callout__quote-attr" style="margin-bottom: 8px;">The user I designed for</p>
+          <p class="callout__quote-text"><strong>Margaret, 58.</strong> Newly diagnosed stage-1 hypertension, prescribed Lisinopril 10 mg daily. First-time medication tracker. Anxious about the diagnosis, wears reading glasses, sceptical of gamification.</p>
+        </div>
+      </aside>
+
+      <div class="grid grid--2">
+        <article class="card card--method">
+          <p class="card__eyebrow">Method 1</p>
+          <h3 class="card__title">Emulated usability test</h3>
+          <p class="card__body">A persona walkthrough, not a moderated session with real users. I played Margaret across the live MyTherapy iOS flow, screen by screen, scoring trust, comprehension, motivation, perceived medical credibility, and fit for actual needs. A stand-in for the moderated round I'd run with a real team.</p>
+          <p class="card__score"><strong>5/10</strong> overall. Strong on visuals, weak on content.</p>
+        </article>
+        <article class="card card--method">
+          <p class="card__eyebrow">Method 2</p>
+          <h3 class="card__title">Behaviour-change review</h3>
+          <p class="card__body">A behaviour-change lens applied across the live MyTherapy iOS flow, scoring motivation, cues, and shame against the literature on chronic-disease adherence.</p>
+          <p class="card__score"><strong>4/10</strong> on behaviour-change. Streaks and points are the main drag.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection__title">Three findings</h3>
+      <div class="findings">
+        <article class="finding">
+          <h4>The screen after the first medication is the highest-leverage in the app.</h4>
+          <p>Margaret picks Hypertension as the indication. The app drops her on a generic "1 of 4 categories" hub. The obvious next move (track BP) is buried as one of four equal tiles. This single screen change drives most of the redesign.</p>
+        </article>
+        <article class="finding">
+          <h4>Streaks and points are clinically risky for chronic conditions.</h4>
+          <p>An all-or-nothing streak silently incentivises double-dosing or delayed dosing. Both are explicit don'ts for Lisinopril.</p>
+        </article>
+        <article class="finding">
+          <h4>The outcome the user cares about is invisible.</h4>
+          <p>Margaret installed the app to manage her BP. The app counts pills. There's no BP card on Today, no trend chart on Progress, and no way to share with her GP. Day 30 has nothing to come back for.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection__title">Comparative analysis</h3>
+      <p class="subsection__lede">I looked at MyTherapy alongside Apple Health, Medisafe, and Bloom at three high-stakes moments in onboarding: the first impression, the screen after the first medication, and the daily reminder loop.</p>
+
+      <h4 class="compare__title">First impression</h4>
+      <p class="compare__lede">The first thing a newly diagnosed user sees. This is where reassurance has to do its work.</p>
+
+      <div class="compare compare--target">
+        <div class="compare__brand compare__brand--target">
+          <p class="compare__name">MyTherapy</p>
+          <div class="compare__shots">
+            <img src="images/welcome/mytherapy-1.png" alt="MyTherapy welcome screen showing 'Track your progress' with an illustration and 'And much more...' caption." />
+            <img src="images/welcome/mytherapy-2.png" alt="MyTherapy welcome screen showing 'Plan your appointments' with an illustration and 'And much more...' caption." />
+            <img src="images/welcome/mytherapy-3.png" alt="MyTherapy welcome screen showing 'Get medication reminders' with an illustration and 'And much more...' caption." />
+          </div>
+          <ul class="compare__lenses">
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Reassurance.</strong> Three feature claims, no proof, no condition mentioned.</li>
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>"Why am I here?"</strong> Each panel ends with "And much more..."</li>
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Demographic fit.</strong> Illustration style skews young.</li>
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Argument structure.</strong> A list of features, no progression.</li>
+          </ul>
+        </div>
+        <aside class="compare__quote">
+          <img class="compare__quote-portrait" src="docs/personas/margaret.svg" alt="Illustration of Margaret, a 58-year-old woman with silver hair and glasses, sitting calmly with both hands cradling a cup of tea. Hand-drawn line work, coral cardigan, cream circle background." />
+          <p class="compare__quote-text">"Three pictures and 'and much more.' Nothing about blood pressure, nothing about a doctor. By the time I got to 'Get started' I still didn't know if this app was for me."</p>
+          <p class="compare__quote-attr">Margaret</p>
+        </aside>
+      </div>
+
+      <div class="compare compare--others">
+        <div class="compare__brand">
+          <p class="compare__name">Apple Health</p>
+          <div class="compare__shots">
+            <img src="images/welcome/apple-health-1.png" alt="Apple Health Set Up Medications screen with three icon-and-line items: track all medications, set a schedule and get reminders, and an encryption assurance about privacy." />
+          </div>
+          <ul class="compare__lenses">
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Reassurance.</strong> The privacy line carries it.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>"Why am I here?"</strong> Three points, one screen, in seconds.</li>
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>Demographic fit.</strong> System style, no people.</li>
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>Argument structure.</strong> Light but coherent.</li>
+          </ul>
+        </div>
+        <div class="compare__brand">
+          <p class="compare__name">Medisafe</p>
+          <div class="compare__shots">
+            <img src="images/welcome/medisafe-1.png" alt="Medisafe welcome screen with a photo of an older man and a younger man laughing, captioned 'Join millions of people already taking control of their meds.'" />
+            <img src="images/welcome/medisafe-2.png" alt="Medisafe screen titled 'Your journey starts here' with options to create a profile or enter a verification code." />
+          </div>
+          <ul class="compare__lenses">
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Reassurance.</strong> "Join millions" gives social proof.</li>
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>"Why am I here?"</strong> Implied, not stated. Taking control of meds.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Demographic fit.</strong> Photography of an older user.</li>
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>Argument structure.</strong> Two beats. Belonging, then action.</li>
+          </ul>
+        </div>
+        <div class="compare__brand">
+          <p class="compare__name">Bloom</p>
+          <div class="compare__shots">
+            <img src="images/welcome/bloom-1.png" alt="Bloom welcome screen showing 'Rewire your brain to be happier' with the subtitle 'Harnessing the science of cognitive restructuring.'" />
+            <img src="images/welcome/bloom-2.png" alt="Bloom welcome screen showing 'Track how fast your mental health improves' with the subtitle 'Build powerful habits that last you a lifetime.'" />
+            <img src="images/welcome/bloom-3.png" alt="Bloom welcome screen showing 'As effective as face-to-face therapy' with the subtitle 'From a recent study from the University of Amsterdam.'" />
+          </div>
+          <ul class="compare__lenses">
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Reassurance.</strong> Each claim is backed by the next.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>"Why am I here?"</strong> The outcome is the headline.</li>
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Demographic fit.</strong> Skews younger.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Argument structure.</strong> Outcome, mechanism, proof.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="compare__title">After the first medication</h4>
+      <p class="compare__lede">The screen the user lands on after their first tablet is set up. Either the app names the obvious next step, or it dumps the user on a generic hub.</p>
+
+      <div class="compare compare--target">
+        <div class="compare__brand compare__brand--target">
+          <p class="compare__name">MyTherapy</p>
+          <div class="compare__shots">
+            <img src="images/handoff/mytherapy-1.png" alt="MyTherapy 'Let's set up your routine' screen with a progress bar at one quarter and four equal-weight category tiles: Medications (1 added), Measurements, Activities, Mood and Symptoms." />
+          </div>
+          <ul class="compare__lenses">
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Confirmation.</strong> A small "1" badge on the Medications tile.</li>
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Next step.</strong> Four equal tiles. The obvious move, BP, is buried in Measurements.</li>
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Indication-awareness.</strong> Generic categories. Doesn't know hypertension.</li>
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Pressure.</strong> "Keep going!" with a quarter-full progress bar.</li>
+          </ul>
+        </div>
+        <aside class="compare__quote">
+          <img class="compare__quote-portrait" src="docs/personas/margaret.svg" alt="Illustration of Margaret, a 58-year-old woman with silver hair and glasses, sitting calmly with both hands cradling a cup of tea. Hand-drawn line work, coral cardigan, cream circle background." />
+          <p class="compare__quote-text">"I added my one tablet and the app told me I was a quarter of the way there. A quarter of the way to what? I'm here for one thing."</p>
+          <p class="compare__quote-attr">Margaret</p>
+        </aside>
+      </div>
+
+      <div class="compare compare--others">
+        <div class="compare__brand">
+          <p class="compare__name">Apple Health</p>
+          <div class="compare__shots">
+            <img src="images/handoff/apple-health-1.png" alt="Apple Health Medications screen showing today's log with Blood Pressure Tablet at 8:45, a Follow-up Reminders Available prompt, and a Your Medications card listing the new medication." />
+          </div>
+          <ul class="compare__lenses">
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Confirmation.</strong> The new medication appears in Today's log and in Your Medications.</li>
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>Next step.</strong> A clear prompt to enable Critical Alerts. No BP tracking nudge.</li>
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Indication-awareness.</strong> The user typed "Blood Pressure Tablet". The app didn't infer the condition.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Pressure.</strong> None. The screen is a working home, not a checklist.</li>
+          </ul>
+        </div>
+        <div class="compare__brand">
+          <p class="compare__name">Medisafe</p>
+          <div class="compare__shots">
+            <img src="images/handoff/medisafe-1.png" alt="Medisafe home screen showing a weekly calendar, today's date highlighted, and a single medication card for Prinivil 10 mg take 1 pill at 08:55. A bottom tab bar with Home, Updates, Medications, and Manage." />
+          </div>
+          <ul class="compare__lenses">
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>Confirmation.</strong> The medication card is on Today, but there's no language about what just happened.</li>
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Next step.</strong> A blank screen below the card. No prompt, no recommendation.</li>
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Indication-awareness.</strong> Drug brand name ("Prinivil") shown, but no condition context.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Pressure.</strong> None. Calm and minimal.</li>
+          </ul>
+        </div>
+        <div class="compare__brand">
+          <p class="compare__name">Bloom</p>
+          <div class="compare__shots">
+            <img src="images/handoff/bloom-1.png" alt="Bloom 'Your program is ready!' screen with a hero card titled 'Overcome Self-Criticism', tagged 'Boost Mood', a description of the program, and metadata for 7 days, 7 sessions, 4 to 8 minutes per day. A primary 'Start Program' button and a secondary 'Show all Programs' link." />
+          </div>
+          <ul class="compare__lenses">
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Confirmation.</strong> "Your program is ready!" names what just happened.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Next step.</strong> One primary action: Start Program. The hero is the move.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Indication-awareness.</strong> The recommended program is picked from the user's stated goal.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Pressure.</strong> One screen, one decision. "Show all programs" as a quiet escape.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 class="compare__title">The daily reminder loop</h4>
+      <p class="compare__lede">The reminder, the action sheet, and what the user sees after they've taken their pill. Three screens, one moment.</p>
+
+      <div class="compare compare--target">
+        <div class="compare__brand compare__brand--target">
+          <p class="compare__name">MyTherapy</p>
+          <div class="compare__shots">
+            <img src="images/notifications/mytherapy-1.png" alt="iOS lock screen banner from MyTherapy with a red CRITICAL label, the title 'Medication at 08:30' with alarm and pill emoji, and 'Lisinopril 10 mg Tabletten 1 pill(s).'" />
+            <img src="images/notifications/mytherapy-2.png" alt="MyTherapy reminder sheet titled '08:30 Medication' showing Lisinopril 10 mg Tabletten with 29 pills left, a Dose row of 1 pill, a Time row of 08:30, and three buttons: Skip and Snooze in pink, Confirm in green." />
+            <img src="images/notifications/mytherapy-3.png" alt="MyTherapy Today screen after confirming the dose, showing 'Congratulations! You've started your streak!', a 2 day streak flame icon, a giant '1 completed task' headline, a black confirmation toast, and a One-time entry button." />
+          </div>
+          <ul class="compare__lenses">
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>Tone.</strong> Red CRITICAL flag, alarm clock framing. Reads like an emergency.</li>
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>Action friction.</strong> Tap to a sheet with three options. The big green Confirm helps.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Specificity.</strong> Names the drug, the dose, the time. Best in show on this lens.</li>
+            <li><span class="score score--1" aria-label="1 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot"></span><span class="score__dot"></span></span><strong>After-tap landing.</strong> Streak celebration, "1 completed task," a daily picture to reveal. Gamified, off-tone for a hypertension user.</li>
+          </ul>
+        </div>
+        <aside class="compare__quote">
+          <img class="compare__quote-portrait" src="docs/personas/margaret.svg" alt="Illustration of Margaret, a 58-year-old woman with silver hair and glasses, sitting calmly with both hands cradling a cup of tea. Hand-drawn line work, coral cardigan, cream circle background." />
+          <p class="compare__quote-text">"It said CRITICAL in red. I thought something was wrong with the pill. I just took my tablet, I don't need a flame and a streak, I just want to know I did the right thing."</p>
+          <p class="compare__quote-attr">Margaret, on the daily reminder</p>
+        </aside>
+      </div>
+
+      <div class="compare compare--others-2">
+        <div class="compare__brand">
+          <p class="compare__name">Apple Health</p>
+          <div class="compare__shots">
+            <img src="images/notifications/apple-health-1.png" alt="iOS lock screen showing a critical Apple Health notification 'Medications Follow Up. Time to log your 08:45 medications.' alongside another medication notification and an unrelated message." />
+            <img src="images/notifications/apple-health-2.png" alt="Apple Health follow-up sheet headed 'Tuesday, 19 May' with a pill icon, the title '08:45 Medication', a 'Log All as Taken' shortcut, and a Blood Pressure Tablet card with Skipped and Taken buttons. A primary blue Done button at the bottom." />
+            <img src="images/notifications/apple-health-3.png" alt="Apple Health Medications screen with a weekly dot strip showing today and yesterday filled, a large 'All Scheduled Medications Logged Today' tile, an As-Needed Medications row, and a Logged history showing the Blood Pressure Tablet at 16:06." />
+          </div>
+          <ul class="compare__lenses">
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>Tone.</strong> Still uses CRITICAL, but the copy is procedural: "Time to log your 08:45 medications."</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Action friction.</strong> Lowest. "Log All as Taken" is a single tap on the sheet.</li>
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>Specificity.</strong> "Blood Pressure Tablet" by user-typed name. Time and dose visible.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>After-tap landing.</strong> A clean dot strip and a calm tile: "All Scheduled Medications Logged Today." No celebration, no pressure.</li>
+          </ul>
+        </div>
+        <div class="compare__brand">
+          <p class="compare__name">Medisafe</p>
+          <div class="compare__shots">
+            <img src="images/notifications/medisafe-1.png" alt="iOS lock screen showing a critical Medisafe notification: 'Let's make sure you don't miss it! Take your 08:55 med and mark as taken.'" />
+            <img src="images/notifications/medisafe-2.png" alt="Medisafe sheet showing a pill graphic, the brand name 'Prinivil', and three lines: scheduled for 08:55 today, 10 mg take 1 pill, last taken at 22:00 yesterday. Three circular buttons at the bottom: Skip, Take, Reschedule." />
+            <img src="images/notifications/medisafe-3.png" alt="Medisafe home screen titled 'Amanda' with a weekday strip from Mon 18 to Sun 24, today's date 19 May highlighted, and one Prinivil 10 mg card scheduled at 08:55. A bottom tab bar with Home, Updates, Medications, Manage." />
+          </div>
+          <ul class="compare__lenses">
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>Tone.</strong> CRITICAL flag with friendly nag copy: "Let's make sure you don't miss it!"</li>
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>Action friction.</strong> Tap to a sheet with three equal buttons. The Take action is the middle one.</li>
+            <li><span class="score score--2" aria-label="2 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot"></span></span><strong>Specificity.</strong> Drug name as brand ("Prinivil"), dose, schedule, last taken.</li>
+            <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>After-tap landing.</strong> A simple weekly calendar and the day's card. Calm and minimal.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============== PRINCIPLES ============== -->
+  <section id="principles" class="band band--cream">
+    <div class="band__inner">
+      <p class="section__eyebrow">03 · Principles</p>
+      <h2 class="section__title">Five principles.</h2>
+      <p class="section__lede">A medical reminder for a chronic condition has three jobs: get the dose taken today, build the daily habit, and keep the reason for taking the tablet alive in the user's head. Three of these principles answer those jobs. Two are product calls that make the rest possible.</p>
+
+      <h3 class="subsection__title">Three behaviour-change bets</h3>
+      <p class="subsection__lede">Three established design-for-behaviour-change principles, picked because they map directly to areas where the original MyTherapy underperforms.</p>
+
+      <div class="principles principles--3">
+        <article class="principle">
+          <p class="principle__num">01</p>
+          <h3 class="principle__title">Show clear goals and progress.</h3>
+          <ul class="principle__list">
+            <li>Concrete BP target (under 130 systolic), threaded through every surface.</li>
+            <li>Weekly dot strip, four-week trend chart, and Day-14 milestone screen all show movement against the goal.</li>
+          </ul>
+          <p class="principle__cite"><strong>Where MyTherapy falls short:</strong> counts pills, not BP. No target, no trend, no answer to "is this working?" Sources: Michie et al., <em>The Behaviour Change Wheel</em> (COM-B); Locke and Latham on goal salience.</p>
+        </article>
+        <article class="principle">
+          <p class="principle__num">02</p>
+          <h3 class="principle__title">Write humane, motivating copy.</h3>
+          <ul class="principle__list">
+            <li>Avoid shaming. Normalise lapses.</li>
+            <li>Recoverable language: a hollow dot says "you missed Tuesday." A streak loss says "you failed."</li>
+          </ul>
+          <p class="principle__cite"><strong>Where MyTherapy falls short:</strong> streak counters and loss-framed prompts punish the bad week, when the user most needs to come back. Sources: Wohl et al. on the "what-the-hell effect"; Haynes et al., Cochrane review of adherence interventions.</p>
+        </article>
+        <article class="principle">
+          <p class="principle__num">03</p>
+          <h3 class="principle__title">Design around cues, not willpower.</h3>
+          <ul class="principle__list">
+            <li>Contextual reminders that thread the user's goal, not bare alarm clocks.</li>
+            <li>Day one: "The one that brings your numbers down."</li>
+            <li>Steady state: "Day 14. Down 6 points, closer to your target."</li>
+          </ul>
+          <p class="principle__cite"><strong>Where MyTherapy falls short:</strong> alarm-clock copy with no goal context. The prompt fades into background noise by week three. Sources: WHO, <em>Adherence to Long-Term Therapies</em> (2003); NICE NG76, <em>Medicines adherence</em>.</p>
+        </article>
+      </div>
+
+      <h3 class="subsection__title">Two product calls</h3>
+      <p class="subsection__lede">Not behaviour-change theory, but the structural decisions that let the three above land.</p>
+
+      <div class="principles">
+        <article class="principle">
+          <p class="principle__num">04</p>
+          <h3 class="principle__title">Personalise by indication.</h3>
+          <p class="principle__body">Once the user names their condition, the next step should be named too. Hypertension means BP tracking is the obvious next move, not one tile of four. Personalisation by indication is what makes "make the outcome visible" possible: you can't centre a trend the user never started logging.</p>
+        </article>
+        <article class="principle">
+          <p class="principle__num">05</p>
+          <h3 class="principle__title">Keep clinical surfaces clean.</h3>
+          <p class="principle__body">Commerce is real, but it doesn't belong on Today, Progress, or Support. Move it to its own clearly named tab so users know which surface is selling and which is helping. Trust is the substrate every other principle is built on; a cluttered clinical surface erodes it faster than any single feature can rebuild it.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== DESIGN ============== -->
+  <section id="design" class="band">
+    <div class="band__inner">
+      <p class="section__eyebrow">04 · Visual design</p>
+      <h2 class="section__title">Visual design.</h2>
+      <p class="section__lede">The visual language the prototype is built on.</p>
+
+      <div class="grid grid--2">
+        <article class="card">
+          <div class="card__visual card__visual--style" aria-hidden="true">
+            <div class="viz-style">
+              <div class="viz-style__chip">
+                <span class="viz-style__swatch" style="background: #E26B5C;"></span>
+                <span class="viz-style__hex">#E26B5C</span>
+              </div>
+              <div class="viz-style__chip">
+                <span class="viz-style__swatch" style="background: #0F4C3A;"></span>
+                <span class="viz-style__hex">#0F4C3A</span>
+              </div>
+              <div class="viz-style__chip">
+                <span class="viz-style__swatch" style="background: #FBE7D6;"></span>
+                <span class="viz-style__hex">#FBE7D6</span>
+              </div>
+              <div class="viz-style__chip">
+                <span class="viz-style__swatch" style="background: #FBF7EE;"></span>
+                <span class="viz-style__hex">#FBF7EE</span>
+              </div>
+              <div class="viz-style__chip">
+                <span class="viz-style__swatch" style="background: #3A2417;"></span>
+                <span class="viz-style__hex">#3A2417</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="card__title">Style</h3>
+          <p class="card__body">Every colour shifts one half-step warmer than the clinical default. The system stays trustworthy without feeling like a waiting room.</p>
+          <ul class="card__list">
+            <li><strong>Coral accent</strong>, not red. Same warmth, none of the medical-alert reading.</li>
+            <li><strong>Teal-green CTAs</strong> (<code>#0F4C3A</code>). Closer to a pharmacy or GP portal than a wellness app.</li>
+            <li><strong>Peach background</strong>, inherited from MyTherapy. Low-stimulation surface for an anxious user.</li>
+            <li><strong>Cream cards</strong>, not pure white. Softer for older eyes, no glare around text.</li>
+            <li><strong>Warm brown ink</strong>, not black. Passes AA contrast, reads softer on a warm ground.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="card__visual card__visual--illustration" aria-hidden="true">
+            <svg class="viz-illust" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <linearGradient id="vizIllustGrad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#FFD9C7"/>
+                  <stop offset="1" stop-color="#FFE9DC"/>
+                </linearGradient>
+                <clipPath id="vizIllustClip"><rect x="0" y="0" width="240" height="200"/></clipPath>
+              </defs>
+              <g clip-path="url(#vizIllustClip)">
+                <rect x="0" y="0" width="240" height="200" fill="url(#vizIllustGrad)"/>
+                <circle cx="44" cy="46" r="14" fill="#FBF7EE"/>
+                <circle cx="44" cy="46" r="9" fill="#E26B5C" opacity=".22"/>
+                <path d="M22 168 q 100 -8 200 0" stroke="#3A2417" stroke-width="1" fill="none" stroke-linecap="round" opacity=".22"/>
+                <ellipse cx="120" cy="178" rx="36" ry="4" fill="#3A2417" opacity=".08"/>
+                <circle cx="120" cy="62" r="15" fill="#F0CDB0"/>
+                <path d="M106 58 q 0 -14 14 -16 q 16 -2 20 10 q 1 6 -1 10 q -6 -4 -12 -4 q -10 0 -14 4 q -4 -2 -7 -4 z" fill="#C8BBB0"/>
+                <g fill="none" stroke="#3A2417" stroke-width="1.4">
+                  <circle cx="114" cy="62" r="4"/>
+                  <circle cx="126" cy="62" r="4"/>
+                  <line x1="118" y1="62" x2="122" y2="62" stroke-linecap="round"/>
+                </g>
+                <path d="M116 70 q 4 3 8 0" stroke="#3A2417" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+                <path d="M114 76 v 6 h 12 v -6" fill="#F0CDB0"/>
+                <path d="M104 84 q 16 -4 32 0 l 4 50 q -20 6 -40 0 z" fill="#E26B5C"/>
+                <path d="M110 104 q 10 4 20 0" stroke="#3A2417" stroke-width="1" fill="none" stroke-linecap="round" opacity=".35"/>
+                <path d="M104 88 q -6 14 -4 30 q 5 2 8 0 q 2 -16 0 -28 z" fill="#F0CDB0"/>
+                <path d="M136 88 q 8 14 6 30 q -5 2 -8 0 q -2 -16 0 -28 z" fill="#F0CDB0"/>
+                <g transform="translate(146 122)">
+                  <rect x="-6" y="-4" width="12" height="4" rx="1" fill="#3A2417"/>
+                  <rect x="-7" y="0" width="14" height="18" rx="1.5" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
+                  <rect x="-7" y="6" width="14" height="6" fill="#E26B5C"/>
+                  <line x1="0" y1="7.5" x2="0" y2="10.5" stroke="#FBF7EE" stroke-width="1.2" stroke-linecap="round"/>
+                  <line x1="-1.5" y1="9" x2="1.5" y2="9" stroke="#FBF7EE" stroke-width="1.2" stroke-linecap="round"/>
+                </g>
+                <path d="M110 132 l -2 38 l 10 0 l 4 -32 z" fill="#3A2417"/>
+                <path d="M124 138 l 4 32 l 10 0 l -2 -36 z" fill="#3A2417"/>
+                <ellipse cx="112" cy="172" rx="8" ry="3.2" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
+                <ellipse cx="132" cy="172" rx="8" ry="3.2" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
+                <g stroke="#3A2417" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".5">
+                  <path d="M70 138 q 8 0 16 0"/>
+                  <path d="M64 148 q 10 0 18 0"/>
+                </g>
+                <g transform="translate(196 86) rotate(28)">
+                  <rect x="-9" y="-4" width="18" height="8" rx="4" fill="#FBF7EE" stroke="#3A2417" stroke-width="1.2"/>
+                  <path d="M -9 -4 h 9 v 8 h -9 a 4 4 0 0 1 0 -8 z" fill="#E26B5C"/>
+                  <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#3A2417" stroke-width="1"/>
+                </g>
+                <path d="M186 162 q 6 -10 -8 -14 q -2 9 8 14 z" fill="#E8C4A8" opacity=".75"/>
+              </g>
+            </svg>
+          </div>
+          <h3 class="card__title">Illustration</h3>
+          <p class="card__body">Hand-drawn, editorial, calm. Carries the warm palette through to every scene so the system stays in one tonal family.</p>
+          <ul class="card__list">
+            <li><strong>No hexagonal containers.</strong> They read as ID badges. Soft peach cards with cream halos instead.</li>
+            <li><strong>No sparkles or bright yellow.</strong> Both raise stimulation, the wrong cue for an anxious newly-diagnosed user.</li>
+            <li><strong>People Margaret can see herself in.</strong> Silver hair, glasses, a coral top, holding her medication. Calm, not abstract.</li>
+          </ul>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============== SOLUTION + PROTOTYPE ============== -->
+  <section id="solution" class="band band--cream">
+    <div class="band__inner">
+      <p class="section__eyebrow">05 · Solution</p>
+      <h2 class="section__title">The redesigned new-user experience.</h2>
+      <p class="section__lede">Three high-stakes moments rebuilt: a welcome that names the outcome, a screen after the first medication that names the next step, and a daily loop that swaps the streak for a recoverable dot strip and a BP trend. Eight screens replaced or added, three deferred to later in the journey, and a clickable prototype that runs the whole flow.</p>
+
+      <!-- ============== MOMENT 01 ============== -->
+      <h4 class="moment-heading"><span class="moment-heading__num">Moment 01</span> First impression</h4>
+      <p class="moment-subheading">The welcome carousel becomes a three-frame argument: mechanism, outcome, proof.</p>
+
+      <div class="changeset">
+        <div class="changeset__row">
+          <div class="changeset__label">
+            <p class="changeset__moment">Changed</p>
+            <p class="changeset__title">Welcome carousel</p>
+            <p class="changeset__note">Generic feature list ("Track your progress... and much more") becomes a three-frame argument that names the condition, the mechanism, and the proof.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--before">
+            <span class="changeset__cell-label">Original</span>
+            <div class="changeset__shots">
+              <img src="images/welcome/mytherapy-1.png" alt="Original MyTherapy welcome carousel frame 1: 'Track your progress' with a phone-and-chart illustration and 'And much more...' caption." />
+              <img src="images/welcome/mytherapy-2.png" alt="Original MyTherapy welcome carousel frame 2: 'Plan your appointments' with a phone-and-card illustration and 'And much more...' caption." />
+              <img src="images/welcome/mytherapy-3.png" alt="Original MyTherapy welcome carousel frame 3: 'Get medication reminders' with a phone-and-bell illustration and 'And much more...' caption." />
+            </div>
+            <p class="changeset__caption changeset__caption--pain"><strong>Pain point</strong>No felt benefit.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--after">
+            <span class="changeset__cell-label">Redesign</span>
+            <img src="images/hero/01-welcome.png" alt="Redesigned welcome screen, naming the medication's mechanism and tying it to a measurable outcome." />
+            <p class="changeset__caption changeset__caption--solution"><strong>Solution</strong>Outcomes are named, motivation has an anchor.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rescore">
+        <p class="rescore__eyebrow">Redesign rescored against the same four lenses</p>
+        <ul class="rescore__lenses">
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Reassurance.</strong> "Built with clinicians, used by 8 million people," with an 8M+ users / 40 countries / 10+ conditions stat strip. Social proof, mechanism, and credibility in one frame.</li>
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>"Why am I here?"</strong> Names the outcome, not the feature list. Margaret sees what the app helps her do before any tap.</li>
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Demographic fit.</strong> An older woman mid-walk in workout clothes. Active, not posed, age-appropriate.</li>
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Argument structure.</strong> Outcome, mechanism, proof. Three beats with a single Get started.</li>
+        </ul>
+        <p class="rescore__delta">Was 1/3 across all four lenses. Now 3/3.</p>
+      </div>
+
+      <!-- ============== MOMENT 02 ============== -->
+      <h4 class="moment-heading"><span class="moment-heading__num">Moment 02</span> The screen after the first medication</h4>
+      <p class="moment-subheading">The four-tile generic hub becomes a named next step. Several screens around it are cut, replaced, or added so the moment lands cleanly.</p>
+
+      <div class="changeset">
+        <div class="changeset__row">
+          <div class="changeset__label">
+            <p class="changeset__moment">Changed</p>
+            <p class="changeset__title">After adding the medication</p>
+            <p class="changeset__note">"1 of 4 categories" becomes "Lisinopril is set up. First reminder at 08:30." The next step is named: log a BP reading.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--before">
+            <span class="changeset__cell-label">Original</span>
+            <img src="images/handoff/mytherapy-1.png" alt="Original MyTherapy handoff screen, showing four generic category tiles after the first medication is added." />
+            <p class="changeset__caption changeset__caption--pain"><strong>Pain point</strong>No felt benefit.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--after">
+            <span class="changeset__cell-label">Redesign</span>
+            <img src="images/hero/02-handoff.png" alt="Redesigned handoff screen, naming BP tracking as the obvious next step for a hypertension user." />
+            <p class="changeset__caption changeset__caption--solution"><strong>Solution</strong>The next step is named, keyed to Margaret's condition.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rescore">
+        <p class="rescore__eyebrow">Redesign rescored against the same four lenses</p>
+        <ul class="rescore__lenses">
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Confirmation.</strong> "Lisinopril is set up. First reminder at 08:30." Names the drug, the time, and what just happened in plain language.</li>
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Next step.</strong> One primary action, "Set up BP tracking." The hero is the move, not one tile of four.</li>
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Indication-awareness.</strong> The screen exists because the user picked Hypertension. The "What you're doing this for" card threads the goal in.</li>
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Pressure.</strong> No quarter-full progress bar, no "1 of 4." A working screen, not a checklist.</li>
+        </ul>
+        <p class="rescore__delta">Was 1/3 across all four lenses. Now 3/3.</p>
+      </div>
+
+      <h5 class="moment-subheading-group">Cut or reframed in service of this moment</h5>
+
+      <div class="changeset">
+        <div class="changeset__row">
+          <div class="changeset__label">
+            <p class="changeset__moment">Removed</p>
+            <p class="changeset__title">Routine intro</p>
+          </div>
+          <div class="changeset__cell changeset__cell--before">
+            <span class="changeset__cell-label">Original</span>
+            <img src="images/changes/orig-routine-intro.png" alt="Original MyTherapy routine intro interstitial titled 'Let's set up your healthy routine!' with a sun, clock, heart, and pill illustration and an 'I'm ready!' button." />
+          </div>
+          <div class="changeset__cell">
+            <div class="changeset__empty">Cut. The next screen already names the routine categories.</div>
+          </div>
+        </div>
+        <div class="changeset__row">
+          <div class="changeset__label">
+            <p class="changeset__moment">Moved later</p>
+            <p class="changeset__title">Inventory and prescriber</p>
+            <p class="changeset__note">Pill counts and the GP search asked too early, before Margaret has any reason to trust the app. They resurface as deferred prompts at "Week 2" and "After your first refill", alongside a new "Day 1, evening" about-you prompt. Each gets a "Not now" escape.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--before">
+            <span class="changeset__cell-label">Original</span>
+            <div class="changeset__shots">
+              <img src="images/changes/orig-inventory.png" alt="Original MyTherapy inventory screen asking 'Do you want to get reminders to refill your inventory?' with a pill blister illustration, a Remind me toggle on, current inventory of 30 pills, and a threshold of 10 pills." />
+              <img src="images/changes/orig-prescriber.png" alt="Original MyTherapy prescriber screen with a doctor avatar, copy asking the user to request prescriptions and appointment reminders, and Name and Location fields with a Search prescriber button." />
+            </div>
+          </div>
+          <div class="changeset__cell changeset__cell--after">
+            <span class="changeset__cell-label">Redesign: deferred prompts</span>
+            <div class="changeset__prompts">
+              <figure class="changeset__prompt">
+                <img src="images/changes/deferred-about.png" alt="Redesigned deferred About you prompt with a 'Day 1, evening' eyebrow, two short demographic questions, and a 'Not now' escape." />
+                <figcaption>Day 1, evening</figcaption>
+              </figure>
+              <figure class="changeset__prompt">
+                <img src="images/changes/deferred-inventory.png" alt="Redesigned deferred refill reminders prompt with a 'Week 2' eyebrow, sensible pre-filled values for current pill count and threshold, and a 'Not now' escape." />
+                <figcaption>Week 2</figcaption>
+              </figure>
+              <figure class="changeset__prompt">
+                <img src="images/changes/deferred-prescriber.png" alt="Redesigned deferred prescriber prompt with an 'After your first refill' eyebrow, a doctor name and location field, and a 'Not now' escape." />
+                <figcaption>After your first refill</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="changeset__row">
+          <div class="changeset__label">
+            <p class="changeset__moment">Reframed</p>
+            <p class="changeset__title">Notification permission</p>
+            <p class="changeset__note">A bare iOS prompt with "No thanks, I'll take the risk" becomes a plain-language primer that names the three things the app would send, with a softer "Not now" escape.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--before">
+            <span class="changeset__cell-label">Original</span>
+            <img src="images/changes/orig-notify.png" alt="Original MyTherapy notification screen titled 'Let's make sure you receive your reminders!' with an alarm clock icon, a primary 'Allow notifications' button, and a 'No thanks, I'll take the risk' link at the bottom." />
+          </div>
+          <div class="changeset__cell changeset__cell--after">
+            <span class="changeset__cell-label">Redesign</span>
+            <img src="images/changes/notification-permission.png" alt="Redesigned notification primer naming the three things the app would notify about: a daily medication reminder, a gentle nudge for missed BP readings, and nothing else. A primary Allow button and a secondary Not now button." />
+          </div>
+        </div>
+      </div>
+
+      <h5 class="moment-subheading-group">Added in service of this moment</h5>
+
+      <div class="changeset">
+        <div class="changeset__row">
+          <div class="changeset__label">
+            <p class="changeset__moment">Added</p>
+            <p class="changeset__title">Goals</p>
+            <p class="changeset__note">Up to three lifestyle outcomes. The first pick threads through the handoff, the day-14 reminder, the home screen, and Insights. The streak goes away because the goal does the same job better.</p>
+          </div>
+          <div class="changeset__cell">
+            <div class="changeset__empty">No equivalent in the original.</div>
+            <p class="changeset__caption changeset__caption--pain"><strong>Pain point</strong>No felt benefit.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--after">
+            <span class="changeset__cell-label">New screen</span>
+            <img src="images/changes/goals.png" alt="Redesigned Goals screen asking the user to pick up to three lifestyle outcomes, with options like 'Travel without worry' and 'Keep up with the people I love'." />
+            <p class="changeset__caption changeset__caption--solution"><strong>Solution</strong>A personal outcome stands in for the missing felt reward.</p>
+          </div>
+        </div>
+        <div class="changeset__row">
+          <div class="changeset__label">
+            <p class="changeset__moment">Added</p>
+            <p class="changeset__title">Log BP, in onboarding</p>
+            <p class="changeset__note">Closes the cause-and-effect loop on day one. The original collected pill counts but not the readings the patient and the GP actually care about.</p>
+          </div>
+          <div class="changeset__cell">
+            <div class="changeset__empty">No equivalent in the original.</div>
+            <p class="changeset__caption changeset__caption--pain"><strong>Pain points</strong>No felt benefit. Regular doctor check-ins.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--after">
+            <span class="changeset__cell-label">New screen</span>
+            <img src="images/changes/log-bp.png" alt="Redesigned log BP screen with two large fields for systolic and diastolic, optional pulse and context tags, and a tip about sitting quietly before the cuff goes on." />
+            <p class="changeset__caption changeset__caption--solution"><strong>Solution</strong>A logged number that moves, and that the GP can talk about.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============== MOMENT 03 ============== -->
+      <h4 class="moment-heading"><span class="moment-heading__num">Moment 03</span> The daily reminder loop</h4>
+      <p class="moment-subheading">The bare alarm becomes a goal-threaded reminder. Progress shifts from a brittle streak to a recoverable dot strip, and the after-tap landing replaces the points celebration with a clinical trend.</p>
+
+      <div class="changeset">
+        <div class="changeset__row">
+          <div class="changeset__label">
+            <p class="changeset__moment">Changed</p>
+            <p class="changeset__title">Daily reminder</p>
+            <p class="changeset__note">A red CRITICAL alarm becomes a calm, goal-threaded prompt. Today swaps the streak flame and "1 completed task" celebration for a dot strip and the BP card.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--before">
+            <span class="changeset__cell-label">Original</span>
+            <img src="images/notifications/mytherapy-1.png" alt="Original MyTherapy daily reminder, a plain medication alert with no goal context." />
+            <p class="changeset__caption changeset__caption--pain"><strong>Pain points</strong>No felt reward. Life stress and fatigue.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--after">
+            <span class="changeset__cell-label">Redesign</span>
+            <img src="images/hero/03-today.png" alt="Redesigned Today screen and reminder, threading the user's stated goal through the daily prompt." />
+            <p class="changeset__caption changeset__caption--solution"><strong>Solution</strong>A recoverable dot strip survives the missed dose.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rescore">
+        <p class="rescore__eyebrow">Redesign rescored against the same four lenses</p>
+        <ul class="rescore__lenses">
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Tone.</strong> Plain language, no CRITICAL flag, no alarm clock. Reads like a friendly nudge, not an emergency.</li>
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Action friction.</strong> Mark taken from the lock screen at steady state. No app open required.</li>
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>Specificity.</strong> Drug, dose, time, plus the goal context the original was missing.</li>
+          <li><span class="score score--3" aria-label="3 out of 3"><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span><span class="score__dot score__dot--on"></span></span><strong>After-tap landing.</strong> A recoverable dot strip and the BP card. No streak flame, no celebration, no "completed task" headline.</li>
+        </ul>
+        <p class="rescore__delta">Was mixed (1/3 tone, 2/3 friction, 3/3 specificity, 1/3 after-tap). Now 3/3 across all four.</p>
+      </div>
+
+      <h5 class="moment-subheading-group">Replaced or added in service of this moment</h5>
+
+      <div class="changeset">
+        <div class="changeset__row">
+          <div class="changeset__label">
+            <p class="changeset__moment">Replaced</p>
+            <p class="changeset__title">Progress tab with RedPoints</p>
+            <p class="changeset__note">A rewards programme, a step chart, and an Apple Health upsell stacked on the screen the user came to for a BP trend. Insights replaces it as the after-tap landing for the daily loop.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--before">
+            <span class="changeset__cell-label">Original</span>
+            <img src="images/changes/orig-progress-tab.png" alt="Original MyTherapy Progress tab showing a My RedPoints zero-point summary with a 'Transfer points and save!' badge, a daily steps bar chart, a 'Connect with Apple Health' button, and a Personalize link." />
+            <p class="changeset__caption changeset__caption--pain"><strong>Pain points</strong>No felt benefit. Regular doctor check-ins.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--after">
+            <span class="changeset__cell-label">Replaced by Insights</span>
+            <img src="images/hero/04-insights.png" alt="Redesigned Insights screen showing a four-week BP trend chart heading toward a 130/80 target line, a plain-language summary, a goal reminder card, and an adherence calendar." />
+            <p class="changeset__caption changeset__caption--solution"><strong>Solution</strong>A 4-week BP trend the user can read, and the GP can export.</p>
+          </div>
+        </div>
+        <div class="changeset__row">
+          <div class="changeset__label">
+            <p class="changeset__moment">Added</p>
+            <p class="changeset__title">Push reminders, day one and steady state</p>
+            <p class="changeset__note">A calm day-one reminder ties the pill to Margaret's goal. The week-2 reminder shifts to "Mark taken" from the lock screen, no opening required.</p>
+          </div>
+          <div class="changeset__cell">
+            <div class="changeset__empty">No equivalent in the original.</div>
+            <p class="changeset__caption changeset__caption--pain"><strong>Pain point</strong>Life stress and fatigue.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--after">
+            <span class="changeset__cell-label">New screens</span>
+            <div class="changeset__shots">
+              <img src="images/changes/push-notif-1.png" alt="Redesigned day-one lock screen reminder showing 'Lisinopril, time for your tablet' with a sub line tying the pill to Margaret's stated goal in plain language." />
+              <img src="images/changes/push-notif-2.png" alt="Redesigned steady-state lock screen reminder with two iOS-style actions, 'Mark taken' and 'Remind me in 15 min', and a sub line that names progress toward the user's goal." />
+            </div>
+            <p class="changeset__caption changeset__caption--solution"><strong>Solution</strong>Mark taken from the lock screen, one tap on a tired evening.</p>
+          </div>
+        </div>
+        <div class="changeset__row">
+          <div class="changeset__label">
+            <p class="changeset__moment">Added</p>
+            <p class="changeset__title">Day-14 milestone</p>
+            <p class="changeset__note">A hybrid model. Ordinary days dismiss silently from the lock screen. Milestone days open the app to a quiet success state with the share-with-doctor export surfaced.</p>
+          </div>
+          <div class="changeset__cell">
+            <div class="changeset__empty">No equivalent in the original.</div>
+            <p class="changeset__caption changeset__caption--pain"><strong>Pain points</strong>No felt reward. Regular doctor check-ins.</p>
+          </div>
+          <div class="changeset__cell changeset__cell--after">
+            <span class="changeset__cell-label">New screen</span>
+            <img src="images/changes/today-milestone.png" alt="Redesigned Today screen on day 14 showing the dot strip landing on today, a BP card with points earned, and a share-with-doctor export prompt." />
+            <p class="changeset__caption changeset__caption--solution"><strong>Solution</strong>A quiet success moment, with the GP export ready a few days before the visit.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subsection__title">Out of scope</h3>
+      <p class="subsection__lede">Skipped for time, not because they don't matter.</p>
+      <div class="grid grid--3">
+        <article class="card">
+          <h3 class="card__title">Accessibility audit</h3>
+          <p class="card__body">Original meets minimum, so I treated parity as a baseline. WCAG 2.2 AA, VoiceOver on BP inputs, and dynamic type are Sprint 1 adds.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title">DiGA regulatory fit</h3>
+          <p class="card__body">Germany's DiGA framework reshapes the GP loop, BP export, and consent. A precondition for shipping, out of scope for a home assignment.</p>
+        </article>
+        <article class="card">
+          <h3 class="card__title">Interaction design</h3>
+          <p class="card__body">Motion specs, micro-interactions, and the haptic shape of "Mark taken." The prototype hints at the rhythm without defining it.</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============== PROTOTYPE ============== -->
+  <section id="prototype" class="band">
+    <div class="band__inner">
+      <p class="section__eyebrow">06 · Prototype</p>
+      <h2 class="section__title">Live prototype.</h2>
+      <p class="section__lede">A clickable walkthrough of the redesigned onboarding and the steady-state loop.</p>
+
+      <div class="proto">
+        <div class="proto__header">
+          <p class="proto__label">Live prototype</p>
+          <a class="proto__link" href="prototype/index.html" target="_blank" rel="noopener">Open in a new tab <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="proto__embed">
+          <div class="proto__frame">
+            <iframe id="proto-frame" src="prototype/index.html?embed=1" title="MyTherapy redesign prototype" loading="lazy"></iframe>
+          </div>
+          <nav class="proto__sections" aria-label="Prototype sections">
+            <ol class="proto-list">
+              <li><button type="button" class="proto-list__btn is-active" data-jump="welcome"><span class="proto-list__num">01</span> Welcome</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="consent"><span class="proto-list__num">02</span> Consent</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="goals"><span class="proto-list__num">03</span> Goals</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="routine-categories"><span class="proto-list__num">04</span> Select routine</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="med-add-1"><span class="proto-list__num">05</span> Add medication</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="handoff"><span class="proto-list__num">06</span> Handoff</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="log-bp"><span class="proto-list__num">07</span> Log BP</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="routine-hub"><span class="proto-list__num">08</span> Routine hub</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="notification-permission"><span class="proto-list__num">09</span> Notifications</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="push-notif-1"><span class="proto-list__num">10</span> Reminder</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="today"><span class="proto-list__num">11</span> Home</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="today-milestone"><span class="proto-list__num">12</span> Day 14</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="treatment"><span class="proto-list__num">13</span> Other tabs</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="insights"><span class="proto-list__num">14</span> Insights</button></li>
+              <li><button type="button" class="proto-list__btn" data-jump="deferred-about"><span class="proto-list__num">15</span> Later prompts</button></li>
+            </ol>
+          </nav>
+        </div>
+        <p class="proto__hint">Use the list to jump between sections. Tap inside the device to navigate.</p>
+      </div>
+
+      <script>
+        (() => {
+          const frame = document.getElementById('proto-frame');
+          const buttons = document.querySelectorAll('.proto-list__btn');
+          const jumpToTopbar = {
+            'med-add-2': 'med-add-1',
+            'med-add-3': 'med-add-1',
+            'med-add-4': 'med-add-1',
+            'med-add-5': 'med-add-1',
+            'med-add-8': 'med-add-1',
+            'support': 'treatment',
+            'push-notif-2': 'push-notif-1',
+            'deferred-inventory': 'deferred-about',
+            'deferred-prescriber': 'deferred-about'
+          };
+          buttons.forEach((b) => {
+            b.addEventListener('click', () => {
+              const name = b.dataset.jump;
+              frame.contentWindow.postMessage({ type: 'go', name }, '*');
+            });
+          });
+          window.addEventListener('message', (e) => {
+            const data = e.data;
+            if (!data || data.type !== 'screen') return;
+            const key = jumpToTopbar[data.name] || data.name;
+            buttons.forEach((b) => {
+              b.classList.toggle('is-active', b.dataset.jump === key);
+            });
+          });
+        })();
+      </script>
+    </div>
+  </section>
+
+  <!-- ============== AI ============== -->
+  <section id="ai" class="band band--cream">
+    <div class="band__inner">
+      <p class="section__eyebrow">07 · AI</p>
+      <h2 class="section__title">Targeted AI, not a chatbot.</h2>
+      <p class="section__lede">In adherence apps "AI" can mean anything from real ML to rule-based reminders. Medisafe and Bearable are the two with genuine models. MyTherapy today has neither. Four places I'd ship real AI.</p>
+
+      <div class="ai-grid">
+        <article class="ai-card">
+          <h3>Predictive lapse detection</h3>
+          <ul>
+            <li><strong>Medisafe's JITI:</strong> ML trained on 12+ years of behavioural data predicts who's about to skip a dose.</li>
+            <li><strong>In MyTherapy:</strong> a push only when Margaret is genuinely off-pattern. Less noise, more signal.</li>
+          </ul>
+        </article>
+        <article class="ai-card">
+          <h3>Pattern detection on Insights</h3>
+          <ul>
+            <li><strong>Bearable:</strong> correlates adherence with symptoms, sleep, and mood.</li>
+            <li><strong>In MyTherapy:</strong> one plain-language observation a week. "Your evening readings run about 6 points higher than mornings. That's normal. Tell your GP if it changes."</li>
+          </ul>
+        </article>
+        <article class="ai-card">
+          <h3>Drug-aware microcopy</h3>
+          <ul>
+            <li><strong>Where the field is thin:</strong> most apps flag a missed dose, none tell you what to do about it.</li>
+            <li><strong>In MyTherapy:</strong> for Lisinopril, "Don't double up today. Take today's dose at 08:30 as usual." For the 10 to 15% who get a dry cough, name the chance and route to the GP.</li>
+          </ul>
+        </article>
+        <article class="ai-card">
+          <h3>Pre-appointment summary</h3>
+          <ul>
+            <li><strong>my a:care:</strong> reflects patterns to clinicians, but doesn't auto-prepare them.</li>
+            <li><strong>In MyTherapy:</strong> three days before her GP visit, a one-page PDF. Weekly BP averages, readings outside target, adherence, side-effect notes, questions to ask.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout callout--quiet">
+        <p class="callout__quote callout__quote--small">What I would not use AI for: streaks, motivational pep talk, anthropomorphised "chat with your meds" (Finch's virtual-pet model works for self-care, not for chronic medication in an anxious 58-year-old), or drug interaction checks (those should be deterministic from a maintained database, not an LLM).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== VALIDATION ============== -->
+  <section id="validation" class="band">
+    <div class="band__inner">
+      <p class="section__eyebrow">08 · Validation and metrics</p>
+      <h2 class="section__title">Testing and metrics.</h2>
+      <p class="section__lede">What I'd take into the first week with a real team.</p>
+
+      <h3 class="subsection__title">Hypotheses</h3>
+      <p class="subsection__lede">Two bets the redesign rests on. Each one has a target delta and a test that would prove or kill it.</p>
+
+      <div class="hypos">
+        <article class="hypo">
+          <p class="hypo__num">H1</p>
+          <div>
+            <h4 class="hypo__title">Naming BP tracking as the next step lifts day-30 retention.</h4>
+            <ul class="hypo__list">
+              <li><strong>Target:</strong> 10 to 15 point lift on day-30 retention for the hypertension cohort.</li>
+              <li><strong>Test:</strong> A/B on the post-medication screen. Control, the four-tile hub. Variant, confirm + named next step (log BP).</li>
+            </ul>
+          </div>
+        </article>
+        <article class="hypo">
+          <p class="hypo__num">H2</p>
+          <div>
+            <h4 class="hypo__title">A recoverable dot strip out-performs the streak on the bad week.</h4>
+            <ul class="hypo__list">
+              <li><strong>Why it matters:</strong> the streak's failure mode is the metric that counts. What happens after a miss.</li>
+              <li><strong>Test:</strong> A/B on the Today home, segmented to users with at least one missed dose in week one. Primary metric, same-week return rate.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="subsection__title">How I'd validate</h3>
+
+      <div class="grid grid--2">
+        <article class="card">
+          <p class="card__eyebrow">Qualitative</p>
+          <h3 class="card__title">Two rounds with real users</h3>
+          <ul class="card__list">
+            <li><strong>Moderated usability,</strong> 6 to 8 newly diagnosed hypertension patients aged 50+. Can they reach a logged BP reading without help, and do they understand why BP tracking is the recommended next step?</li>
+            <li><strong>Diary study,</strong> 4 weeks, 5 patients on the live build. Do day-30 retention and BP logging frequency hold up outside a moderated room?</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="card__eyebrow">Quantitative</p>
+          <h3 class="card__title">Leading and lagging metrics</h3>
+          <ul class="card__list">
+            <li><strong>Leading: first BP reading logged in onboarding.</strong> The earliest signal that the reframe lands.</li>
+            <li><strong>Lagging: day-30 retention</strong> for hypertension users. The headline metric.</li>
+            <li><strong>Lagging: GP export rate.</strong> The clinical-value indicator. Small absolute volume, but the one a clinician would care about.</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 class="subsection__title">If I had two sprints</h3>
+      <div class="ship">
+        <div class="ship__col">
+          <p class="ship__label">Sprint 1</p>
+          <ul class="ship__list">
+            <li>Replace the streak with the weekly dot strip.</li>
+            <li>Ship the screen after the first medication.</li>
+            <li>Surface BP logging on Today.</li>
+            <li>A/B test H1 and H2.</li>
+          </ul>
+        </div>
+        <div class="ship__col">
+          <p class="ship__label">Sprint 2</p>
+          <ul class="ship__list">
+            <li>Insights trend chart.</li>
+            <li>Missed-dose recovery copy. Smart static logic, no AI yet.</li>
+            <li>Move commerce off Support into its own tab.</li>
+          </ul>
+        </div>
+        <div class="ship__col">
+          <p class="ship__label">v2</p>
+          <ul class="ship__list">
+            <li>Pattern detection on Insights.</li>
+            <li>Drug-aware recovery copy.</li>
+            <li>Pre-appointment summaries.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="ship__note">Sprints 1 and 2 are roughly 60% of the retention upside without any AI infrastructure.</p>
+
+      <h3 class="subsection__title">What I'd watch in the first month with a real team</h3>
+      <p class="subsection__lede">A home assignment ends here. The actual work begins when the first 100 hypertension users land on the new flow. Three things I'd be checking week one.</p>
+      <ul class="card__list card__list--scope">
+        <li><strong>Are users finding "Log BP"?</strong> If not, the named next step needs to be louder, or the screen above it is doing too much.</li>
+        <li><strong>What does the bad week actually look like?</strong> The dot strip is the bet of the redesign. The first user who misses two doses tells you whether it works.</li>
+        <li><strong>Is the GP export getting opened?</strong> The clinical-value loop is the long-term retention story. If month-two users aren't reaching for it, the milestone screen is the lever to pull.</li>
+      </ul>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="footer">
+  <p>Designed, written, and built by Amanda Low. MyTherapy is owned by smartpatient GmbH. Not affiliated with smartpatient or Oviva.</p>
+</footer>
+
+<script>
+  // sticky topnav active section
+  const links = document.querySelectorAll('.topnav__links a');
+  const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+  const setActive = () => {
+    const y = window.scrollY + 120;
+    let active = sections[0];
+    for (const s of sections) {
+      if (s.offsetTop <= y) active = s;
+    }
+    links.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === '#' + active.id));
+  };
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+</script>
+
+</body>
+</html>
